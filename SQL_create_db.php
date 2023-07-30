@@ -1,33 +1,23 @@
 <?php
-echo  "Welcome to MYSQL";
-echo "<br>";
-$servername="localhost";
-$username="root";
-$passowrd="";
+ $servername="localhost";
+ $username="root";
+ $password="root";
+ $database="pratik";
 
-//Connection
-$conn=mysqli_connect($servername,$username,$passowrd);
-
-//Die if connection not successful
-if (!$conn){
-    die("Sorry we failed to connect:". mysqli_connect_error());
-}
-else{
-    echo "Connection was Successful";
-}
-echo "<br>";
-
-//Create a db
-$sql="CREATE DATABASE dbPratik6";
-$result=mysqli_query($conn,$sql);
-if (var_dump($result) == boolval(false)) {
-    echo "The result is True";
-    echo "<br>";
-}
-else{
-    echo "the result was false";
-    echo "<br>";
-}
-
+ $conn=mysqli_connect($servername,$username,$password,$database);
+ if (!$conn){
+     echo "Connection was Not Succesfull because of --> ". mysqli_error($conn);
+ }
+ else{
+     echo"Connection was successful";
+ }
+ $sql="CREATE DATABASE contacts";
+ $result=mysqli_query($conn,$sql);
+ if ($result){
+     echo "Database is created";
+ }
+ else {
+     echo"Database creation unsuccesfull";
+ }
 
 ?>
