@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     $sql = "INSERT INTO `contactus` (`name`, `email`, `concern`, `date`) VALUES ('$name',' $email','$desc', CURRENT_TIMESTAMP)";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Success! </strong>
+        echo '<div class="alert alert-green alert-dismissible fade show" role="alert"><strong>Success! </strong>
                 Your entry has been submitted successfully
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                </div>';
